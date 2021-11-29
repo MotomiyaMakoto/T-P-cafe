@@ -1,0 +1,7 @@
+{
+  "name": "TPProject",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

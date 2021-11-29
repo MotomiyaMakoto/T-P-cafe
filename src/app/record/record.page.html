@@ -1,0 +1,77 @@
+<ion-header>
+  <ion-toolbar>
+
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon name="log-out-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-title>
+      หน้าประวัติการสั่งซื้อ
+    </ion-title>
+
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+
+
+
+
+ 
+  <ion-list *ngFor="let ex of ['Latte','Latte','Latte','Latte','Latte']">
+    <ion-item lines="none">
+      <ion-card>
+        <ion-grid>
+          <ion-row>
+          <ion-col style="text-align: center;">{{ex}}</ion-col></ion-row>
+          <ion-row>
+            <ion-col size="4">
+              <img class="style-" src="https://www.starbucks.co.th/stb-media/2020/08/10.Caffe-Mocha1080-600x600.png" alt="">
+            </ion-col>
+            <ion-col>
+              <h5>จำนวน
+              </h5>
+              <h5>ราคา
+              </h5>
+              </ion-col>
+            <ion-col>
+              <h5>  0
+              </h5>
+              <h5> 0
+              </h5>
+            </ion-col>
+            <ion-col>
+              <h5> บาท
+              </h5>
+              <h5> บาท
+              </h5>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card>
+    </ion-item>
+      </ion-list>
+  
+      
+    <ion-grid style="margin:15px;">
+      <ion-row>
+        <ion-col class="text">
+          <ion-text>จำนวนที่ขายทั้งหมด
+            30000แก้ว
+          รวมยอดทั้งหมด
+            3000  บาท</ion-text>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-button expand="full" shape="round" color="tertiary" routerLink="/menu">ย้อนกลับ</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  
+  </ion-content>

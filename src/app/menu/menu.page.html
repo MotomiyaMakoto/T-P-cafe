@@ -1,0 +1,73 @@
+<ion-header>
+  <ion-toolbar>
+
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon name="log-out-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-title>
+      Menu
+    </ion-title>
+
+  </ion-toolbar>
+</ion-header> 
+
+
+<ion-content>
+
+
+
+
+  <ion-list *ngFor="let ex of [1,2,3,4,5,6,7,8,9]">
+    <ion-item lines="none">
+      <ion-card>
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+              <img src="https://www.starbucks.co.th/stb-media/2020/08/10.Caffe-Mocha1080-600x600.png" alt="">
+            </ion-col>
+            <ion-col>
+              <div>
+                <ion-button class="btn" color="danger" expand="full" shape="round">ลบ
+                </ion-button>
+              </div>
+              <div>
+                <ion-button class="btn" color="success" expand="full" shape="round">เพิ่ม
+                </ion-button>
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+              <h5>0 บาท</h5>
+            </ion-col>
+            <ion-col>
+              <h5>จำนวน 0 แก้ว</h5>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card>
+    </ion-item>
+  </ion-list>
+
+    <ion-grid style="margin:15px;">
+      <ion-row>
+        <ion-col>
+          <ion-button expand="full" shape="round" color="success" routerLink="/record">ประวัติ</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button expand="full" shape="round" color="warning" routerLink="/savemenu">บันทึก</ion-button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-button expand="full" shape="round" color="tertiary" routerLink="/menu">ย้อนกลับ</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+</ion-content>
