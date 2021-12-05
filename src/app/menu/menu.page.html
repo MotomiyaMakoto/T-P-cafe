@@ -20,13 +20,16 @@
 
 
 
-  <ion-list *ngFor="let ex of [1,2,3,4,5,6,7,8,9]">
+  <ion-list *ngFor="let ex of items | async">
     <ion-item lines="none">
       <ion-card>
+        <div>
+          {{ex.name}}
+        </div>
         <ion-grid>
           <ion-row>
             <ion-col>
-              <img src="https://www.starbucks.co.th/stb-media/2020/08/10.Caffe-Mocha1080-600x600.png" alt="">
+              <img [src]="ex.imgurl" alt="">
             </ion-col>
             <ion-col>
               <div>
@@ -43,7 +46,7 @@
         <ion-grid>
           <ion-row>
             <ion-col>
-              <h5>0 บาท</h5>
+              <h5>{{ex.price}} บาท</h5>
             </ion-col>
             <ion-col>
               <h5>จำนวน 0 แก้ว</h5>
