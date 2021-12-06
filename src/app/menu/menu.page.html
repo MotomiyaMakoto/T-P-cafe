@@ -1,26 +1,80 @@
 <ion-header>
   <ion-toolbar>
-
-    <ion-buttons slot="end">
-      <ion-button>
-        <ion-icon name="log-out-outline"></ion-icon>
-      </ion-button>
-    </ion-buttons>
-
     <ion-title>
       Menu
     </ion-title>
-
   </ion-toolbar>
-</ion-header> 
+</ion-header>
 
 
 <ion-content>
 
+  <ion-card>
+    <ion-card-title style="margin-left: 50px; margin-top: 20px;">กาแฟโบราณ</ion-card-title>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <img src="https://img.kapook.com/u/2016/surauch/Health/coffee2.jpg" alt="">
+        </ion-col>
+        <ion-col style="text-align: center;">
+          <div>
+            <ion-button class="btn" color="success" expand="full" shape="round">เพิ่ม</ion-button>
+          </div>
+          <div>
+            <h1> 0 แก้ว</h1>
+          </div>
+          <div>
+            <ion-button class="btn" color="danger" expand="full" shape="round">ลบ</ion-button>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <h1>บาท</h1>
+        </ion-col>
+        <ion-col>
+          <h1>จำนวน 0 แก้ว</h1>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
 
-
-
-  <ion-list *ngFor="let ex of items | async">
+  <ion-card>
+    <ion-card-title style="margin-left: 50px; margin-top: 20px;">ชาไทย</ion-card-title>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8-4cmiyk34XBOFWj3ndrBYpZNaWPx-AMpP9C61gGrrtZV77GB-kIPPMIrMwSZAYhWmqQ&usqp=CAU"
+            alt="">
+        </ion-col>
+        <ion-col style="text-align: center;">
+          <div>
+            <ion-button class="btn" color="success" expand="full" shape="round">เพิ่ม</ion-button>
+          </div>
+          <div>
+            <h1> 0 แก้ว</h1>
+          </div>
+          <div>
+            <ion-button class="btn" color="danger" expand="full" shape="round" >ลบ</ion-button>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <h1>บาท</h1>
+        </ion-col>
+        <ion-col>
+          <h1>จำนวน 0 แก้ว</h1>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+  <!-- <ion-list *ngFor="let ex of items | async">
     <ion-item lines="none">
       <ion-card>
         <div>
@@ -55,22 +109,22 @@
         </ion-grid>
       </ion-card>
     </ion-item>
-  </ion-list>
+  </ion-list> -->
 
-    <ion-grid style="margin:15px;">
-      <ion-row>
-        <ion-col>
-          <ion-button expand="full" shape="round" color="success" routerLink="/record">ประวัติ</ion-button>
-        </ion-col>
-        <ion-col>
-          <ion-button expand="full" shape="round" color="warning" routerLink="/savemenu">บันทึก</ion-button>
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col>
-          <ion-button expand="full" shape="round" color="tertiary" routerLink="/menu">ย้อนกลับ</ion-button>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
+  <ion-grid style="margin:15px;">
+    <ion-row>
+      <ion-col>
+        <ion-button expand="full" shape="round" color="warning" routerLink="/record">ประวัติ</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button expand="full" shape="round" color="success" routerLink="/savemenu">บันทึก</ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-button expand="full" shape="round" color="tertiary" routerLink="/home">ย้อนกลับ</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 
 </ion-content>
