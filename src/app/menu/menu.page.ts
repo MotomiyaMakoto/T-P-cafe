@@ -12,7 +12,7 @@ export class MenuPage implements OnInit {
 
   itemCollection: AngularFirestoreCollection<any>;
   items: Observable<any>;
-  
+
   constructor(private firestore: AngularFirestore,) {
     this.itemCollection = firestore.collection<any>('drink');
     this.items = this.itemCollection.valueChanges();
@@ -20,12 +20,18 @@ export class MenuPage implements OnInit {
   ngOnInit() {
   }
 
-  sumcha:number;
-  sumcoffee:number;
+  countcha = 0;
+  countcoffee = 0;
+
+  sumpricecha = 0;
+  sumpricecoffee = 0;
 
   count1 = 0;
   num = 0;
   count2 = 0;
+
+  price_cha = 40;
+  price_coffee = 35;
 
   minus1() {
     if (this.count1 > 0) {
@@ -36,7 +42,7 @@ export class MenuPage implements OnInit {
     this.count1 = this.count1 + 1;
   }
 
- 
+
   minus2() {
     if (this.count2 > 0) {
       this.count2 = this.count2 - 1;
@@ -47,24 +53,26 @@ export class MenuPage implements OnInit {
   }
 
   save() {
-
+    this.countcha = this.countcha + this.count1
+    this.countcoffee = this.countcoffee + this.count2
+    this.sumpricecha = (this.price_cha * this.count1)
+    this.sumpricecoffee = (this.price_coffee * this.count2)
+    console.log(this.countcha, this.countcoffee)
     console.log("complete")
-    const id = "savesave"
+    const id = "svaeorder"
     const orders = {
-
-      
       id: id,
-      coffee: this.count1,
-      Chathai: this.count2,
+      // coffee: this.count1,
+      // Chathai: this.count2,
+      pricecha: this.sumpricecha,
+      pricecoffee: this.sumpricecoffee,
+      countcoffee: this.countcoffee,
+      countcha: this.countcha,
     }
     this.itemCollection.doc(id).set(orders)
-      .then(() => {       
+      .then(() => {
         this.count1 = 0;
         this.count2 = 0;
       })
-
   }
-
-
-
 }
