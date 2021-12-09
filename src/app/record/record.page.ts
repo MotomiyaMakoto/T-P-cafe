@@ -12,4 +12,6 @@ export class RecordPage implements OnInit {
   ngOnInit() {
   }
 
+ 
+
 }

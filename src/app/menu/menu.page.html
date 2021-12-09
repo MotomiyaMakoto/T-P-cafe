@@ -1,5 +1,8 @@
 <ion-header>
   <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
     <ion-title>
       Menu
     </ion-title>
@@ -18,13 +21,13 @@
         </ion-col>
         <ion-col style="text-align: center;">
           <div>
-            <ion-button class="btn" color="success" expand="full" shape="round">เพิ่ม</ion-button>
+            <ion-button class="btn" color="success" expand="full" shape="round" (click)="add1()">เพิ่ม</ion-button>
           </div>
           <div>
-            <h1> 0 แก้ว</h1>
+            <h1>{{count1}}</h1>
           </div>
           <div>
-            <ion-button class="btn" color="danger" expand="full" shape="round">ลบ</ion-button>
+            <ion-button class="btn" color="danger" expand="full" shape="round" (click)="minus1()">ลบ</ion-button>
           </div>
         </ion-col>
       </ion-row>
@@ -32,10 +35,10 @@
     <ion-grid>
       <ion-row>
         <ion-col>
-          <h1>บาท</h1>
+          <h1>35 บาท</h1>
         </ion-col>
         <ion-col>
-          <h1>จำนวน 0 แก้ว</h1>
+          <h1>จำนวน {{count1}} แก้ว</h1>
         </ion-col>
       </ion-row>
     </ion-grid>
@@ -52,13 +55,13 @@
         </ion-col>
         <ion-col style="text-align: center;">
           <div>
-            <ion-button class="btn" color="success" expand="full" shape="round">เพิ่ม</ion-button>
+            <ion-button class="btn" color="success" expand="full" shape="round" (click)="add2()">เพิ่ม</ion-button>
           </div>
           <div>
-            <h1> 0 แก้ว</h1>
+            <h1>{{count2}}</h1>
           </div>
           <div>
-            <ion-button class="btn" color="danger" expand="full" shape="round" >ลบ</ion-button>
+            <ion-button class="btn" color="danger" expand="full" shape="round" (click)="minus2()">ลบ</ion-button>
           </div>
         </ion-col>
       </ion-row>
@@ -66,10 +69,10 @@
     <ion-grid>
       <ion-row>
         <ion-col>
-          <h1>บาท</h1>
+          <h1> 40 บาท</h1>
         </ion-col>
         <ion-col>
-          <h1>จำนวน 0 แก้ว</h1>
+          <h1>จำนวน {{count2}} แก้ว</h1>
         </ion-col>
       </ion-row>
     </ion-grid>
@@ -117,12 +120,7 @@
         <ion-button expand="full" shape="round" color="warning" routerLink="/record">ประวัติ</ion-button>
       </ion-col>
       <ion-col>
-        <ion-button expand="full" shape="round" color="success" routerLink="/savemenu">บันทึก</ion-button>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col>
-        <ion-button expand="full" shape="round" color="tertiary" routerLink="/home">ย้อนกลับ</ion-button>
+        <ion-button expand="full" shape="round" color="success" (click)="save()">บันทึก</ion-button>
       </ion-col>
     </ion-row>
   </ion-grid>
