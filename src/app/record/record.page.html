@@ -8,62 +8,65 @@
     </ion-title>
   </ion-toolbar>
 </ion-header>
- 
+
 
 <ion-content>
-  <ion-list *ngFor="let ex of ['1','2']">
-    <ion-item lines="none">
-      <ion-card>
-        <ion-grid>
-          <ion-row>
-            <ion-col style="text-align: center;">{{ex}}</ion-col>
-          </ion-row>
-          <ion-row>
-            <ion-col size="4">
-              <img class="style-" src="https://www.starbucks.co.th/stb-media/2020/08/10.Caffe-Mocha1080-600x600.png"
-                alt="">
-            </ion-col>
-            <ion-col>
-              <h5>จำนวน
-              </h5>
-              <h5>ราคา
-              </h5>
-            </ion-col>
-            <ion-col>
-              <h5> 0
-              </h5>
-              <h5> 0
-              </h5>
-            </ion-col>
-            <ion-col>
-              <h5> บาท
-              </h5>
-              <h5> บาท
-              </h5>
-            </ion-col>
-          </ion-row>
-        </ion-grid>
-      </ion-card>
-    </ion-item>
-  </ion-list>
+  <ion-card *ngFor="let item of items |async" >
+    <ion-card-title>
+      <h1>สรุปรายการ</h1>
+    </ion-card-title>
+    <ion-card-title>
+      ชา : {{item.cha_count}} แก้ว
+    </ion-card-title>
+    <ion-card-title>
+      กาแฟ : {{item.coffee_count}} แก้ว
+    </ion-card-title>
+    <ion-card-title>
+      ราคารวม : {{item.sum_price}} บาท
+    </ion-card-title>
+  </ion-card>
 
+  <ion-card *ngFor="let item of items |async" >
+    <ion-card-title style="margin-left: 50px; margin-top: 20px;">ชาไทย</ion-card-title>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8-4cmiyk34XBOFWj3ndrBYpZNaWPx-AMpP9C61gGrrtZV77GB-kIPPMIrMwSZAYhWmqQ&usqp=CAU"
+            alt="">
+        </ion-col>
+        <ion-col style="text-align: center;">
+          <div>
+            <h1>{{item.cha_count}} แก้ว</h1>
+          </div>
+          <div>
+            <h1>{{item.cha_price}} บาท</h1>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
 
-  <ion-grid style="margin:15px;">
-    <ion-row>
-      <ion-col class="text">
-        <ion-text>จำนวนที่ขายทั้งหมด
-          30000แก้ว
-          รวมยอดทั้งหมด
-          3000 บาท</ion-text>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-    </ion-row>
-    <ion-row>
-      <ion-col>
-      
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+  <ion-card *ngFor="let item of items |async" >
+    <ion-card-title style="margin-left: 50px; margin-top: 20px;">กาแฟโบราณ</ion-card-title>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <img
+            src="https://img.kapook.com/u/2016/surauch/Health/coffee2.jpg"
+            alt="">
+        </ion-col>
+        <ion-col style="text-align: center;">
+          <div>
+            <h1>{{item.coffee_count}} แก้ว</h1>
+          </div>
+          <div>
+            <h1>{{item.coffee_price}} บาท</h1>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+
 
 </ion-content>
