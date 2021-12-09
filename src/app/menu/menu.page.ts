@@ -23,12 +23,7 @@ export class MenuPage implements OnInit {
   countcha = 0;
   countcoffee = 0;
 
-  sumpricecha = 0;
-  sumpricecoffee = 0;
 
-  count1 = 0;
-  num = 0;
-  count2 = 0;
 
   price_cha = 40;
   price_coffee = 35;
@@ -52,22 +47,31 @@ export class MenuPage implements OnInit {
     this.count2 = this.count2 + 1;
   }
 
+
+
+  count1 = 0; //กาแฟ
+  count2 = 0;//ชา
+
+  sumcha = 0;
+  sumcofe = 0;
+
   save() {
+    // this.sumcha = this.sumcha + (this.count2 * 40);
+    // console.log(this.sumcha,this.countcha)
     this.countcha = this.countcha + this.count1
     this.countcoffee = this.countcoffee + this.count2
-    this.sumpricecha = (this.price_cha * this.count1)
-    this.sumpricecoffee = (this.price_coffee * this.count2)
-    console.log(this.countcha, this.countcoffee)
+    this.sumcha = this.sumcha + (this.count2 * 40);
+    this.sumcofe = this.sumcofe + (this.count1 * 35);
+    console.log(this.sumcha)
     console.log("complete")
     const id = "svaeorder"
     const orders = {
       id: id,
-      // coffee: this.count1,
-      // Chathai: this.count2,
-      pricecha: this.sumpricecha,
-      pricecoffee: this.sumpricecoffee,
+      testcah: this.sumcha,
       countcoffee: this.countcoffee,
       countcha: this.countcha,
+      sum_pricecha:this.sumcha,
+      sum_pricecoffee:this.sumcofe,
     }
     this.itemCollection.doc(id).set(orders)
       .then(() => {
