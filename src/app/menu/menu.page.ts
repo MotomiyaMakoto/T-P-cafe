@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
 import { Observable } from 'rxjs';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-menu',
@@ -13,7 +14,7 @@ export class MenuPage implements OnInit {
   itemCollection: AngularFirestoreCollection<any>;
   items: Observable<any>;
 
-  constructor(private firestore: AngularFirestore,) {
+  constructor(private firestore: AngularFirestore, public alertController: AlertController) {
     this.itemCollection = firestore.collection<any>('drink');
     this.items = this.itemCollection.valueChanges();
   }
@@ -57,30 +58,53 @@ export class MenuPage implements OnInit {
 
   sumprice = 0;
 
-  save() {
+  async save() {
+    const alert = await this.alertController.create({
+      cssClass: 'my-custom-class',
+      header: 'Confirm!',
+      message: 'Message <strong>text</strong>!!!',
+      buttons: [
+        {
+          text: 'Cancel',
+          role: 'cancel',
+          cssClass: 'secondary',
+          handler: (blah) => {
+            console.log('Confirm Cancel: blah');
+          }
+        }, {
+          text: 'Okay',
+          handler: () => {
+            console.log('Confirm Okay');
+            this.countcha = this.countcha + this.count2
+            this.countcoffee = this.countcoffee + this.count1
+            this.sumcha =  (this.count2 * 40);
+            this.sumcofe =  (this.count1 * 35);
+            this.sumprice = this.sumprice + (this.sumcha + this.sumcofe)
+            console.log(this.sumcha)
+            console.log("complete")
+            const id = "svaeorder"
+            const orders = {
+              id: id,
+              testcah: this.sumcha,
+              coffee_count: this.countcoffee,
+              coffee_price: this.sumcofe,
+              cha_count: this.countcha,
+              cha_price: this.sumcha,
+              sum_price: this.sumprice
+            }
+            this.itemCollection.doc(id).set(orders)
+              .then(() => {
+                this.count1 = 0;
+                this.count2 = 0;
+              })
+          }
+        }
+      ]
+    });
+
+    await alert.present();
     // this.sumcha = this.sumcha + (this.count2 * 40);
     // console.log(this.sumcha,this.countcha)
-    this.countcha = this.countcha + this.count1
-    this.countcoffee = this.countcoffee + this.count2
-    this.sumcha = this.sumcha + (this.count2 * 40);
-    this.sumcofe = this.sumcofe + (this.count1 * 35);
-    this.sumprice = this.sumprice + (this.sumcha + this.sumcofe)
-    console.log(this.sumcha)
-    console.log("complete")
-    const id = "svaeorder"
-    const orders = {
-      id: id,
-      testcah: this.sumcha,
-      coffee_count: this.countcoffee,
-      coffee_price: this.sumcofe,
-      cha_count: this.countcha,
-      cha_price: this.sumcha,
-      sum_price: this.sumprice
-    }
-    this.itemCollection.doc(id).set(orders)
-      .then(() => {
-        this.count1 = 0;
-        this.count2 = 0;
-      })
+
   }
 }

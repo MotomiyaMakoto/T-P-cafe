@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+   <!-- <ion-title>เข้าสู่ระบบ</ion-title> -->
+  </ion-toolbar>
+</ion-header>
+ 
+<ion-content>
+
+  <!-- <div style="margin: 10px;">
+    <ion-buttons class="buttonback">
+      <ion-icon name="arrow-back-circle-outline" routerLink="/home"></ion-icon>
+    </ion-buttons>
+  </div> -->
+
+  <form class="buttom">
+    <ion-item lines="full">
+
+      <ion-label class="font">เบอร์โทร/อีเมล</ion-label>
+      <ion-input class="font2" type="text" required name="email" [(ngModel)]="email"></ion-input>
+    </ion-item>
+
+    <ion-item lines="full">
+      <ion-label class="font" >รหัสผ่าน</ion-label>
+      <ion-input class="font2" type="password" required name="password" [(ngModel)]="password"></ion-input>
+    </ion-item>
+
+    <ion-row>
+      <ion-col>
+        <br>
+        <ion-button type="submit" color="primary" expand="block" (click)="login()">เข้าสู่ระบบ</ion-button>
+        <!-- <a [routerLink]="['/forgotpassword']" class="small-text">ลืมรหัส ?</a> -->
+      </ion-col>
+      <!-- <ion-col>
+        <br><ion-button type="submit" color="danger" expand="block" (click)="gmail()" >เข้าสู่ระบบด้วย gmail</ion-button>
+      </ion-col> -->
+    </ion-row>
+  </form>
+</ion-content>
