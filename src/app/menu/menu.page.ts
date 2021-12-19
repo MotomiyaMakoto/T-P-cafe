@@ -61,18 +61,18 @@ export class MenuPage implements OnInit {
   async save() {
     const alert = await this.alertController.create({
       cssClass: 'my-custom-class',
-      header: 'Confirm!',
-      message: 'Message <strong>text</strong>!!!',
+      header: 'ยืนยัน?',
+      message: 'ยืนยันการเพิ่มข้อมูล',
       buttons: [
         {
-          text: 'Cancel',
+          text: 'ยกเลิก',
           role: 'cancel',
           cssClass: 'secondary',
           handler: (blah) => {
             console.log('Confirm Cancel: blah');
           }
         }, {
-          text: 'Okay',
+          text: 'ยืนยัน',
           handler: () => {
             console.log('Confirm Okay');
             this.countcha = this.countcha + this.count2
