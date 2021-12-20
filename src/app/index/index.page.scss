@@ -30,7 +30,7 @@
     border-style: solid;
     border-width: 3px;
     border-radius: 15px;
-    margin-bottom: 5px;
+   
   }
     
   
@@ -62,17 +62,23 @@
   .rock{
     background-color: rgb(81, 116, 231);
   }
+
+  ion-content{
+    --ion-background-color:rgb(252, 210, 120);
+  }
   
  
   
   .buttom{
       font-size: 15px;
       font-family: 'Itim', cursive;
-      margin-top: 50%;
+    
       padding: 10%;
   }
 
-  ion-card{
-      height: 50px;
+
+  ion-card {
+    text-align: center;
+    border-radius: 30px;
+    height: 250px;
   }
-  

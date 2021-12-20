@@ -1,9 +1,25 @@
 <ion-content class="auth-form">
-  <ion-grid>
+  <ion-grid style="margin-top: 40px;">
     <!-- <ion-row> -->
     <!-- <ion-col align-self-center> -->
+      <div style="text-align: center;">
+        <h1>T & P Cafe</h1>
+      </div>
+      
+      <ion-card>
+        <ion-slides [options]="{autopla:true}">
+          <ion-slide>
+            <img src="https://img.kapook.com/u/2016/surauch/Health/coffee2.jpg" alt="">
+          </ion-slide>
+          <ion-slide>
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8-4cmiyk34XBOFWj3ndrBYpZNaWPx-AMpP9C61gGrrtZV77GB-kIPPMIrMwSZAYhWmqQ&usqp=CAU"
+              alt="">
+          </ion-slide>
+        </ion-slides>
+      </ion-card>
     <div class="buttom">
-      <ion-button [routerLink]="['/register']" expand="block" color="danger">ลงทะเบียน</ion-button>
+      <ion-button [routerLink]="['/register']" expand="block" color="success">ลงทะเบียน</ion-button>
       <span class="divider line one-line">หรือ</span>
       <span class="already">หากมีชื่อผู้ใช้ ?</span>
       <ion-button [routerLink]="['/login']" expand="block" color="primary">เข้าสู่ระบบ</ion-button>
